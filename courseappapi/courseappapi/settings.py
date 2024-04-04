@@ -45,8 +45,15 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'rest_framework',
-    'drf_yasg'
+    'drf_yasg',
+    'oauth2_provider',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -95,8 +102,8 @@ AUTH_USER_MODEL = 'courses.User'
 MEDIA_ROOT = '%s/courses/static/' % BASE_DIR
 CKEDITOR_UPLOAD_PATH = "ckeditor/images/"
 
-
 import pymysql
+
 pymysql.install_as_MySQLdb()
 
 # Password validation
@@ -137,3 +144,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+id ='SGGv9K3E3EpIhsvTzezD0IYrNSw7kCPWQTSGBE6J'
+secret = 'UvZKraJR80fRq94QK6fWPsCRSPb8GptyC4O72Gi0NwOmVXgDH1c99vqdnB8v2jEMdSLGP6sFq3pHYJO2FIA1dgJ08mRxHq661KJ2d65VEonRty54gWmeafrHEhO7v6Zy'
